@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="calculator">
+    <input type="number" id="num1" placeholder="Первое число">
+    <input type="number" id="num2" placeholder="Второе число">
+    <input type="text" id="result" placeholder="Результат" readonly>
+    <button onclick="add()">Сложение</button>
+    <button onclick="subtract()">Вычитание</button>
+    <button onclick="multiply()">Умножение</button>
+    <button onclick="divide()">Деление</button>
+    <button class="clear" onclick="clearFields()">Очистить</button>
+</div>
+
+<script>
+    function add() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        if (isNaN(num1) || isNaN(num2)) {
+            alert('Пожалуйста, введите числа в оба поля.');
+            return;
+        }
+        document.getElementById('result').value = num1 + num2;
+    }
+
+    function subtract() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        if (isNaN(num1) || isNaN(num2)) {
+            alert('Пожалуйста, введите числа в оба поля.');
+            return;
+        }
+        document.getElementById('result').value = num1 - num2;
+    }
+
+    function multiply() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        if (isNaN(num1) || isNaN(num2)) {
+            alert('Пожалуйста, введите числа в оба поля.');
+            return;
+        }
+        document.getElementById('result').value = num1 * num2;
+    }
+
+    function divide() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        if (isNaN(num1) || isNaN(num2)) {
+            alert('Пожалуйста, введите числа в оба поля.');
+            return;
+        }
+        if (num2 === 0) {
+            alert('Деление на ноль невозможно.');
+            return;
+        }
+        document.getElementById('result').value = num1 / num2;
+    }
+
+    function clearFields() {
+        document.getElementById('num1').value = '';
+        document.getElementById('num2').value = '';
+        document.getElementById('result').value = '';
+    }
+</script>
+
+</body>
+</html>
